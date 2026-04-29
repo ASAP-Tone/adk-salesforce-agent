@@ -20,15 +20,44 @@ truiz-salesforce-agent/
 
 > 💡 **Tip:** Use [Gemini CLI](https://github.com/google-gemini/gemini-cli) for AI-assisted development - project context is pre-configured in `GEMINI.md`.
 
-## Requirements
+## Setup Instructions
+
+Follow these steps to set up the project locally:
+
+### 1. Prerequisites
 
 Before you begin, ensure you have:
-- **uv**: Python package manager (used for all dependency management in this project) - [Install](https://docs.astral.sh/uv/getting-started/installation/) ([add packages](https://docs.astral.sh/uv/concepts/dependencies/) with `uv add <package>`)
+- **uv**: Python package manager (used for all dependency management in this project) - [Install](https://docs.astral.sh/uv/getting-started/installation/)
 - **Google Cloud SDK**: For GCP services - [Install](https://cloud.google.com/sdk/docs/install)
 - **make**: Build automation tool - [Install](https://www.gnu.org/software/make/) (pre-installed on most Unix-based systems)
 
+### 2. Google Cloud Platform (GCP) Project Setup
 
-## Quick Start
+1. Create a new GCP project or select an existing one in the [Google Cloud Console](https://console.cloud.google.com/).
+2. Enable the required APIs for this project, such as Vertex AI API.
+3. Authenticate with Google Cloud using the SDK:
+   ```bash
+   gcloud auth login
+   gcloud auth application-default login
+   gcloud config set project <your-project-id>
+   ```
+
+### 3. Environment Configuration
+
+Create a `.env` file in the `app/` directory:
+
+```bash
+touch app/.env
+```
+
+Populate the `.env` file with your specific configurations. For example:
+```env
+PROJECT_ID="your-gcp-project-id"
+LOCATION="us-central1"
+# Add other necessary variables (like Salesforce credentials, API keys, etc.)
+```
+
+### 4. Install Dependencies & Launch
 
 Install required packages and launch the local development environment:
 

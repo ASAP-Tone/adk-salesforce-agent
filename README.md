@@ -65,6 +65,14 @@ Install required packages and launch the local development environment:
 make install && make playground
 ```
 
+## Architecture Decisions
+
+When developing and deploying this agent, consider the following architectural opinions and best practices:
+
+*   **ADK Starter Pack:** This project utilizes the ADK Starter Pack, which provides essential scaffolding and enforces best practices for Agent Developer Kit (ADK) development. It is recommended to adhere to its structure to ensure maintainability and compatibility with GCP tooling.
+*   **Integration Strategy:** For robust, fully-managed integrations, **Application Integration** is the recommended service. However, for simpler or custom tool execution directly within the agent's context, you have the flexibility to utilize the `MCP Toolset` class provided by the ADK framework.
+*   **Deployment Target:** Deploying to **Agent Engine** provides a fully managed runtime optimized for AI agents out-of-the-box. As an alternative, you can also deploy the agent to **Cloud Run** if you require more granular control over the container environment or need to fit into existing Cloud Run architectures.
+
 ## Commands
 
 | Command              | Description                                                                                 |

@@ -2,7 +2,7 @@
 
 **Document Reference:** UM-GC5060-REV4  
 **Date:** September 2, 2026  
-**Engineering Escalation:** SAM1-14  
+**Engineering Escalation:** SAM1-11  
 **Classification:** Technical Release  
 
 This comprehensive, code-compliant manual provides detailed instructions for the safe, reliable, and compliant electrical wiring and configuration of the GC5060 Heavy-Duty Industrial Generator System. This document serves as the standard operational reference to resolve technical integration inquiries for key clients, including United Oil & Gas Corp.

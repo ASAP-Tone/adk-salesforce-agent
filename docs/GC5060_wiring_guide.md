@@ -1,11 +1,20 @@
 # GC5060 Electrical Wiring & Installation Manual
 
-**Document Reference:** UM-GC5060-REV4  
-**Date:** September 2, 2026  
-**Engineering Escalation:** SAM1-11  
+**Document Reference:** UM-GC5060-REV5  
+**Date:** September 9, 2026  
+**Engineering Escalation / Reference:** SAM1-11  
 **Classification:** Technical Release  
 
 This comprehensive, code-compliant manual provides detailed instructions for the safe, reliable, and compliant electrical wiring and configuration of the GC5060 Heavy-Duty Industrial Generator System. This document serves as the standard operational reference to resolve technical integration inquiries for key clients, including United Oil & Gas Corp.
+
+---
+
+## Document Control & Revision History
+
+| Revision | Date | Reference | Description of Changes |
+| :--- | :--- | :--- | :--- |
+| REV4 | Sep 2, 2026 | Initial Draft | Seed technical documentation outline. |
+| **REV5** | **Sep 9, 2026** | **SAM1-11** | **Added critical clarifications on Modbus RS485 terminal polarity and Neutral-to-Ground bonding configurations to prevent field wiring surges.** |
 
 ---
 
@@ -57,7 +66,8 @@ The GC5060 requires a 3-Phase, 4-Wire Star/Wye configuration at the main termina
 ### Connection Protocols:
 1.  **Phase Conductors (L1, L2, L3):** Connect the main phase feeders to terminals **TB-1 (Phase A)**, **TB-2 (Phase B)**, and **TB-3 (Phase C)**. Use double-bolt compression lugs torqued to 45 N·m (33 lb-ft).
     *   *Color Code:* Black (L1), Red (L2), Blue (L3) for US 480V installations.
-2.  **Neutral Conductor (N):** Connect the system neutral to terminal **TB-N**. Ensure the neutral-to-ground bonding strap is installed ONLY if the GC5060 is configured as a *Separately Derived System* (SDS).
+2.  **Neutral Conductor (N) & Bonding Strap (Surge Protection):** Connect the system neutral to terminal **TB-N**. 
+    *   *CRITICAL SAFETY NOTE:* The internal neutral-to-ground bonding strap must be installed **ONLY** if the GC5060 is configured as a *Separately Derived System* (SDS). If the generator is connected to a non-switching neutral automatic transfer switch (ATS), remove the bonding strap to prevent parallel ground loops and **electric surges damaging adjacent equipment** (resolves Case #00001023).
 3.  **Protective Earth / Ground (G/PE):** Connect a minimum 2/0 AWG copper grounding electrode conductor directly to terminal **TB-G**. Solidly bond this to the main site grounding grid.
 
 ---
@@ -67,7 +77,8 @@ The GC5060 requires a 3-Phase, 4-Wire Star/Wye configuration at the main termina
 To enable remote monitoring, automated start/stop cycles, and safety interlocks, integrate the auxiliary terminal strip (TB-AUX):
 
 *   **Remote Start (Terminals 3 & 4):** Connect potential-free dry contacts from the Automatic Transfer Switch (ATS) to terminals 3 and 4. A contact closure initiates the start cycle.
-*   **Modbus RS485 Comm (Terminals 11 & 12):** Connect shielded twisted-pair (STP) cable to terminals 11 (A-) and 12 (B+) for telemetry integration with SCADA or Building Management Systems.
+*   **Modbus RS485 Comm (Terminals 11 & 12 - Telemetry Polarity):** Connect shielded twisted-pair (STP) cable to terminals 11 and 12 for telemetry integration with SCADA or Building Management Systems.
+    *   *CRITICAL RS485 POLARITY:* Connect **TB-11 to Modbus A- (TX-/RX-)** and **TB-12 to Modbus B+ (TX+/RX+)**. Do **NOT** swap these terminals, as incorrect polarity will freeze the remote monitoring interface and result in stalled telemetry connections (resolves RS485 telemetry freeze issues).
 *   **Emergency Stop (Terminals 1 & 2):** Connect external, normally-closed (NC) emergency stop buttons in series across terminals 1 and 2. Opening this circuit triggers an immediate hardware shutdown.
 
 ---

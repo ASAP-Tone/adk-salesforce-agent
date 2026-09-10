@@ -2,7 +2,7 @@
 
 **Document Reference:** UM-GC5060-REV5  
 **Date:** September 9, 2026  
-**Engineering Escalation / Reference:** SAM1-17  
+**Engineering Escalation / Reference:** SAM1-11  
 **Classification:** Technical Release  
 
 This comprehensive, code-compliant manual provides detailed instructions for the safe, reliable, and compliant electrical wiring and configuration of the GC5060 Heavy-Duty Industrial Generator System. This document serves as the standard operational reference to resolve technical integration inquiries for key clients, including United Oil & Gas Corp.
@@ -14,7 +14,7 @@ This comprehensive, code-compliant manual provides detailed instructions for the
 | Revision | Date | Reference | Description of Changes |
 | :--- | :--- | :--- | :--- |
 | REV4 | Sep 2, 2026 | Initial Draft | Seed technical documentation outline. |
-| **REV5** | **Sep 9, 2026** | **SAM1-17** | **Added critical clarifications on Modbus RS485 terminal polarity and Neutral-to-Ground bonding configurations to prevent field wiring surges.** |
+| **REV5** | **Sep 9, 2026** | **SAM1-11** | **Added critical clarifications on Modbus RS485 terminal polarity and Neutral-to-Ground bonding configurations to prevent field wiring surges.** |
 
 ---
 
